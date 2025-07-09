@@ -48,7 +48,6 @@ function render() {
 
   incomeList.innerHTML = ""
   expenseList.innerHTML = ""
-  transactionList.innerHTML = ""
 
   let balance = 0
 
