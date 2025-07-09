@@ -45,19 +45,18 @@ function addExpense() {
 }
 
 function render() {
-
-  incomeList.innerHTML = ""
-  expenseList.innerHTML = ""
-
+  incomeList.innerText = ""
+  expenseList.innerText = ""
+  transactionList.innerText = ""
   let balance = 0
 
   for (let income of incomes) {
     const li = document.createElement("li")
-    li.innerHTML = `${income.description} - ${income.amount} kr (Inkomst)`
+    li.innerText = `${income.description} - ${income.amount} kr (Inkomst)`
     incomeList.appendChild(li)
 
     const Tli = document.createElement("li")
-    Tli.innerHTML = `${income.description} - ${income.amount} kr (Inkomst)`
+    Tli.innerText = `${income.description} - ${income.amount} kr (Inkomst)`
     transactionList.appendChild(Tli)
 
     balance = balance + income.amount
@@ -65,17 +64,17 @@ function render() {
 
   for (let expense of expenses) {
     const li = document.createElement("li")
-    li.innerHTML = `${expense.description} - ${expense.amount} kr (Utgift)`
+    li.innerText = `${expense.description} - ${expense.amount} kr (Utgift)`
     expenseList.appendChild(li)
 
     const Tli = document.createElement("li")
-    Tli.innerHTML = `${expense.description} - ${expense.amount} kr (Utgift)`
+    Tli.innerText = `${expense.description} - ${expense.amount} kr (Utgift)`
     transactionList.appendChild(Tli)
 
     balance = balance - expense.amount
   }
 
-  balanceDisplay.innerHTML = balance
+  balanceDisplay.innerText = `${balance}`
 }
 
 incomeBtn.addEventListener("click", () => {
